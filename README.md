@@ -1,8 +1,8 @@
 # Paper Light and Dark
 
 ![](https://i.imgur.com/oiU3D5X.png)
-![](https://staticdelivery.nexusmods.com/mods/110/images/64439/64439-1564303304-1910227579.png)
-![](https://staticdelivery.nexusmods.com/mods/110/images/64439/64439-1564303303-547383128.png)
+![](https://staticdelivery.nexusmods.com/mods/110/images/64439/64439-1587882240-482386471.png)
+![](https://staticdelivery.nexusmods.com/mods/110/images/64439/64439-1587882240-622334703.png)
 
 ## Installation
 
