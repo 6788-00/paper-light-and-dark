@@ -1,4 +1,4 @@
-/* v5.3 Paper Dark by 6788-00       */
+/* v6.0 Paper Dark by 6788-00       */
 /* https://6788-00.tumblr.com/      */
 
 /* Color Palette                    */
@@ -47,7 +47,7 @@ QAbstractItemView::item:selected {
 }
 
 QSplitter {
-	width: 8px;
+	width: 6px;
 }
 
 /* Toolbar */
@@ -67,20 +67,25 @@ QToolBar::separator {
 	margin: 6px 8px;
 }
 
-QToolButton {
+QToolButton:menu-indicator {
+	image: url(./Paper/Dark/Arrows/down.svg);
+	margin: 4px;
+}
+
+#toolBar {
+	qproperty-movable: true;
+}
+
+#toolBar QToolButton {
+	background: transparent;
 	padding: 6px;
 	border-radius: 10px;
 	margin: 4px 4px 0 4px;
 }
 
-QToolButton:hover,
-QToolButton:pressed {
+#toolBar QToolButton:hover,
+#toolBar QToolButton:pressed {
 	background: #006868;
-}
-
-QToolButton:menu-indicator {
-	image: url(./Paper/Dark/Arrows/down.svg);
-	margin: 4px;
 }
 
 /* Toolbar Button Icons */
@@ -226,7 +231,7 @@ QComboBox::down-arrow {
 
 /* Most Buttons */
 
-QPushButton {
+QPushButton, QToolButton {
     background: #141414;
     color: #D3D3D3;
     min-height: 22px;
@@ -241,7 +246,9 @@ QPushButton:disabled {
 }
 
 QPushButton:hover,
-QPushButton:pressed {
+QPushButton:pressed,
+QToolButton:hover,
+QToolButton:pressed {
 	background: #006868;
 	color: #FFF;
 }
@@ -296,6 +303,7 @@ QPushButton::menu-indicator {
 
 #refreshButton,
 #btnRefreshData,
+#dataTabRefresh,
 #btnRefreshDownloads {
 	/* Refresh buttons */
 	qproperty-icon: url(./Paper/Dark/refresh.svg);
@@ -303,7 +311,8 @@ QPushButton::menu-indicator {
 }
 
 #clearCacheButton,
-#revokeNexusAuthButton {
+#revokeNexusAuthButton,
+#nexusDisconnect {
 	/* Clear Cache button on the Nexus tab of the Settings window */
 	qproperty-icon: url(./Paper/Dark/cross.svg);
 	qproperty-iconSize: 14px;
@@ -405,7 +414,6 @@ QScrollBar::sub-line:horizontal {
 /* Vertical */
 
 QScrollBar:vertical {
-	/* vertical scroll bar */
     background: #141414;
     width: 20px;
 	border: 2px solid #242424;
@@ -413,7 +421,6 @@ QScrollBar:vertical {
 }
 
 QScrollBar::handle:vertical {
-	/* handle for vertical scroll bars */
     background: #3D3D3D;
     min-height: 32px;
     border-radius: 6px;
@@ -421,7 +428,6 @@ QScrollBar::handle:vertical {
 }
 
 QScrollBar::add-line:vertical {
-	/* scroll down button */
     background: #141414;
     image: url(./Paper/Dark/Arrows/down.svg);
     height: 23px;
@@ -433,7 +439,6 @@ QScrollBar::add-line:vertical {
 }
 
 QScrollBar::sub-line:vertical {
-	/* scroll up button */ 
     background: #141414;
     image: url(./Paper/Dark/Arrows/up.svg);
     height: 23px;
@@ -503,7 +508,6 @@ QProgressBar::chunk {
 QHeaderView::section {
 	/* each section on the header row (i.e. Mod name is one section and Flags another) */
     background: #141414;
-    height: 22px;
     padding: 0 5px;
     border: 0;
 	border-bottom: 2px solid #242424;
@@ -551,45 +555,39 @@ QMenuBar::item:selected {
 }
 
 QMenu {
-	/* right click menu */
 	background: #141414;
 	border: 2px solid #242424;
 	border-radius: 6px;
 }
 
 QMenu::item {
-	/* rows on right click menus */
 	background: #141414;
-	padding: 5px 20px 5px 24px;
+	padding: 5px 24px;
 }
 
 QMenu::item:selected {
 	/* rows on right click menus when moused-over (i dunno) */
 	background: #006868;
 	color: #FFF;
-	border: 0;
-	border-radius: 4px;
+	border-radius: 6px;
 }
 
 QMenu::item:disabled {
-	/* unavailable rows on right click menus */
 	background: #242424;
 	color: #808080;
 }
 
 QMenu::separator {
-	/* seperators on right click menus */
 	height: 2px;
 	background: #242424;
 }
 
 QMenu::icon {
 	/* area for icons on right click menus */
-	padding: 4px;
+	padding-left: 20px;
 }
 
 QMenu::right-arrow {
-	/* submenu indicator */
 	image: url(./Paper/Dark/Arrows/right.svg);
 	padding-right: 5px;
 }
@@ -602,7 +600,6 @@ QMenu QPushButton {
 }
 
 QMenu QPushButton:hover {
-	/* Change Categories and Primary Categories buttons when moused-over */
 	border-radius: 6px;
 }
 
@@ -610,31 +607,29 @@ QMenu QCheckBox,
 QMenu QRadioButton {
 	/* checkboxes on right click menus (change categories)*/
 	background: #141414;
-	padding: 2px 6px;
+	padding: 5px;
 }
 
 QMenu QCheckBox:hover {
 	/* checkboxes on right click menus when moused-over (change categories) */
-	background: #3D3D3D;
+	background: #006868;
 	color: #FFF;
+	border-radius: 6px;
 }
 
 /* Right Pane and Tab Bars */
 
 QTabWidget::pane {
-	/* right pane */
-	top: 1px;
-	padding: 4px 2px 0px 2px;
+	bottom: 4px;
 	border-radius: 10px;
+	margin-right: -10px;
 }
 
 QTabWidget::tab-bar {
-	/* tabs */
 	alignment: center;
 }
 
 QTabBar::tab {
-	/* a tab */
 	background: #141414;
     padding: 4px 14px;
     border: 2px solid #141414;
@@ -642,34 +637,29 @@ QTabBar::tab {
 }
 
 QTabBar::tab:disabled {
-	/* a tab that is disabled */
 	background: #242424;
 	border: 2px solid transparent;
 }
 
 QTabBar::tab:selected {
-	/* a tab that is clicked */
-	color: #FFF;
 	background: #006868;
+	color: #FFF;
 	border: 2px solid #006868;
 }
 
 QTabBar::tab:first {
-	/* that first tab */
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
 
 QTabBar::tab:last {
-	/* the last tab */
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
 
 QTabBar::tab:hover {
-	/* a tab when moused-over */
-	color: #FFF;
 	background: #3D3D3D;
+	color: #FFF;
 	border: 2px solid #3D3D3D;
 }
 
@@ -935,19 +925,29 @@ QProgressBar[downloadView=compact] {
 	min-width: 12px;
 }
 
+QTreeWidget#filters,
 #categoriesList {
 	/* Categories panel */
-	min-width: 220px;
-	margin: 7px 0;
+	min-width: 240px;
 }
 
 #categoriesGroup {
 	/* Categories group box */
-	padding-bottom: 0;
+	padding: 23px 0 0 0;
 	border: 0;
 }
 
 /* Modify Executables Dialog */
+
+#EditExecutablesDialog QToolButton {
+	background: transparent;
+	padding: 4px 8px;
+	margin: 8px 0 8px 8px;
+}
+
+#EditExecutablesDialog QToolButton:hover {
+	background: #006868;
+}
 
 #EditExecutablesDialog #add {
     qproperty-icon: url(./Paper/Dark/plus.svg);
@@ -969,6 +969,57 @@ QProgressBar[downloadView=compact] {
     qproperty-icon: url(./Paper/Dark/cross.svg);
 }
 
+/* Log */
+
+QDockWidget {
+	/* Log window */
+	background: transparent;
+	titlebar-close-icon: url(./Paper/Dark/cross.svg);
+	titlebar-normal-icon: url(./Paper/Dark/Arrows/Large/up.svg);
+	border: 0;
+	padding: 0 10px;
+}
+
+QDockWidget::close-button, QDockWidget::float-button {
+	background: #242424;
+	padding: 2px;
+	border: 0;
+}
+
+QDockWidget::close-button:hover, QDockWidget::float-button:hover {
+	background: #3D3D3D;
+	border-radius: 6px;
+}
+
+/* Status Bar */
+
+QStatusBar {
+	background: #3D3D3D;
+}
+
+QStatusBar QLabel {
+	background: transparent;
+}
+
+QStatusBar::item {
+	border: 0;
+}
+
+/* Tables */
+
+QTableView {
+	gridline-color: #242424;
+	border: 0;
+}
+
+QTableView QTableCornerButton::section {
+	/* Top left corner of tables */
+	background: #141414;
+	border: 0;
+	border-right: 2px solid #242424;
+	border-bottom: 2px solid #242424;
+}
+
 /* Misc */
 
 QLCDNumber {
@@ -978,14 +1029,16 @@ QLCDNumber {
 	border-radius: 6px;
 }
 
+QPlainTextEdit#output {
+	/* LOOT window */
+	background: #141414;
+	padding-left: 10px;
+	border-radius: 6px;
+}
+
 #activeModslabel, #activePluginsLabel {
 	/* Increase the left margin of the counters */
 	padding-left: 6px;
-}
-
-QTableView {
-	gridline-color: #242424;
-	border: 0;
 }
 
 QToolTip {
@@ -993,6 +1046,11 @@ QToolTip {
 	color: #D3D3D3;
 	border: 2px solid #242424;
 	border-radius: 6px;
+}
+
+LinkLabel {
+	/* Links */
+  	qproperty-linkColor: #006868;
 }
 
 #stepsStack QWidget {
@@ -1006,11 +1064,23 @@ QToolTip {
 	border-radius: 10px;
 }
 
-#espFilterEdit {
-	margin: 0 0 4px 0;
-}
-
 #executablesListBox::item {
 	/* fixes the black text problem on the Modify Executables window */
 	color: #D3D3D3;
+}
+
+#espFilterEdit {
+	margin-top: 4px;
+}
+
+#dataTabFilter, #downloadFilterEdit {
+	margin-top: 6px;
+}
+
+#bossButton {
+	margin-bottom: 4px;
+}
+
+#btnRefreshDownloads, #dataTabRefresh {
+	margin-bottom: 6px;
 }
