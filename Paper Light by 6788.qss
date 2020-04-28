@@ -1,4 +1,4 @@
-/* v6.0 Paper Light by 6788-00      */
+/* v6.1 Paper Light by 6788-00      */
 /* https://6788-00.tumblr.com/      */
 
 /* Color Palette                    */
@@ -1025,6 +1025,16 @@ QTableView QTableCornerButton::section {
 	border: 0;
 	border-right: 2px solid #E8E8E8;
 	border-bottom: 2px solid #E8E8E8;
+}
+
+/* Mod Exists Dialog */
+
+QueryOverwriteDialog QTextBrowser {
+	background: #E8E8E8;
+}
+
+QueryOverwriteDialog QPushButton {
+	margin: 0 0 0 8px;
 }
 
 /* Misc */

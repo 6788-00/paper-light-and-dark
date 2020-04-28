@@ -1,4 +1,4 @@
-/* v6.0 Paper Dark by 6788-00       */
+/* v6.1 Paper Dark by 6788-00       */
 /* https://6788-00.tumblr.com/      */
 
 /* Color Palette                    */
@@ -1020,6 +1020,16 @@ QTableView QTableCornerButton::section {
 	border-bottom: 2px solid #242424;
 }
 
+/* Mod Exists Dialog */
+
+QueryOverwriteDialog QTextBrowser {
+	background: #242424;
+}
+
+QueryOverwriteDialog QPushButton {
+	margin: 0 0 0 8px;
+}
+
 /* Misc */
 
 QLCDNumber {
@@ -1083,4 +1093,8 @@ LinkLabel {
 
 #btnRefreshDownloads, #dataTabRefresh {
 	margin-bottom: 6px;
+}
+
+#MessageDialog {
+	background: red;
 }
