@@ -1063,6 +1063,11 @@ LinkLabel {
   	qproperty-linkColor: #006868;
 }
 
+/* MO2 Logo on the About dialog */
+AboutDialog #iconLabel {
+	qproperty-pixmap: url(./Paper/Dark/mo2.svg);
+}
+
 #stepsStack QWidget {
 	/* Groupboxes on the FOMOD Installer Dialog */
 	border: none;
@@ -1093,8 +1098,4 @@ LinkLabel {
 
 #btnRefreshDownloads, #dataTabRefresh {
 	margin-bottom: 6px;
-}
-
-#MessageDialog {
-	background: red;
 }

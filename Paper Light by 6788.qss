@@ -1069,6 +1069,11 @@ LinkLabel {
   	qproperty-linkColor: #008484;
 }
 
+/* MO2 Logo on the About dialog */
+AboutDialog #iconLabel {
+	qproperty-pixmap: url(./Paper/Light/mo2.svg);
+}
+
 #stepsStack QWidget {
 	/* Groupboxes on the FOMOD Installer Dialog */
 	border: none;
